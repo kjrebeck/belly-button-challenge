@@ -52,7 +52,7 @@ function buildCharts(sample) {
       marker: {
         color: otu_ids,
         size: sample_values,
-        colorscale: 'Bluered',
+        colorscale: 'YlOrRd',
         type: 'heatmap'
       }
     };
@@ -63,16 +63,26 @@ function buildCharts(sample) {
     let bubble_traces = [bubble_trace];
 
     let bubble_layout = {
-      title: 'Bacteria Cultures Per Sample',
+      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent black background
+      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent black background
+      title: {
+        text: 'Bacteria Cultures Per Sample',
+        font: {
+          color: 'lightgray',
+          size: 28
+        }},
       xaxis: {
         title: 'OTU ID',
+        color: "white",
+        size: 15
         },
       yaxis: {
         title: 'Number of Bacteria',
+        color: "white"
         },
       showlegend: false,
-      height: 600,
-      width: 1200
+      height: 500,
+      opacity: 0
     };
 
     // Render the plot to the div tag with id "plot"
@@ -89,7 +99,7 @@ function buildCharts(sample) {
       y: y_bar_val.slice(0,10).reverse(),
       type: 'bar',
       marker: {
-        colorscale: 'Bluered',
+        colorscale: 'YlOrRd',
         color: sample_values.slice(0,10).reverse()
       },
       text: otu_labels.slice(0,10).reverse(),
@@ -102,10 +112,22 @@ function buildCharts(sample) {
 
     // Apply a title to the layout
     let bar_layout = {
-      title: "Top 10 Bacteria Cultures Found",
+      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent dark gray background
+      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent dark gray background
+      font: {
+          color: 'white'
+        },
+      title: {
+        text: "Top 10 Bacteria Cultures Found",
+        font: {
+          color: 'lightgray',
+          size: 28
+        }},
       xaxis: {
-        title: 'Number of Bacteria',
-        }
+        title: 'Number of Bacteria'
+        },
+      height: 400,
+      opacity: 0.4
       }
     
     // Render the plot to the div tag with id "plot"
