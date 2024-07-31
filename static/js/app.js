@@ -68,7 +68,7 @@ function buildCharts(sample) {
       title: {
         text: 'Bacteria Cultures Per Sample',
         font: {
-          color: 'lightgray',
+          color: 'white',
           size: 28
         }},
       xaxis: {
@@ -120,7 +120,7 @@ function buildCharts(sample) {
       title: {
         text: "Top 10 Bacteria Cultures Found",
         font: {
-          color: 'lightgray',
+          color: 'white',
           size: 28
         }},
       xaxis: {
