@@ -55,16 +55,17 @@ function buildCharts(sample) {
         colorscale: 'YlOrRd',
         type: 'heatmap'
       }
-    };
+    }
 
     // Render the Bubble Chart
-
     // Create data array
     let bubble_traces = [bubble_trace];
 
+    // Bubble Chart Layout
     let bubble_layout = {
-      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent black background
-      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent black background
+      //background color, code from chat gbt
+      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // dark gray
+      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // dark gray
       title: {
         text: 'Bacteria Cultures Per Sample',
         font: {
@@ -73,27 +74,26 @@ function buildCharts(sample) {
         }},
       xaxis: {
         title: 'OTU ID',
-        color: "white",
-        size: 15
+        color: "white"
         },
       yaxis: {
         title: 'Number of Bacteria',
         color: "white"
         },
       showlegend: false,
-      height: 500,
-      opacity: 0
-    };
+      height: 500
+    }
 
     // Render the plot to the div tag with id "plot"
     Plotly.newPlot("bubble", bubble_traces, bubble_layout);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let y_bar_val = otu_ids.map(x => `OTU: ${x}`);
-    console.log(y_bar_val)
+    //console log
+    console.log(y_bar_val);
 
     // Build a Bar Chart
-    // Don't forget to slice and reverse the input data appropriately
+    // slice and reverse the input 
     let bar_trace = {
       x: sample_values.slice(0,10).reverse(),
       y: y_bar_val.slice(0,10).reverse(),
@@ -104,16 +104,18 @@ function buildCharts(sample) {
       },
       text: otu_labels.slice(0,10).reverse(),
       orientation: 'h'
-    };
+    }
 
     // Render the Bar Chart
     // Create data array
     let bar_traces = [bar_trace];
 
+    // Bar Chart Layout
     // Apply a title to the layout
     let bar_layout = {
-      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent dark gray background
-      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // Semi-transparent dark gray background
+      //background color, code from chat gbt
+      paper_bgcolor: 'rgba(47, 47, 47, 0.8)', // dark gray
+      plot_bgcolor: 'rgba(47, 47, 47, 0.8)', // dark gray
       font: {
           color: 'white'
         },
@@ -126,13 +128,11 @@ function buildCharts(sample) {
       xaxis: {
         title: 'Number of Bacteria'
         },
-      height: 400,
-      opacity: 0.4
-      }
+      height: 400
+    }
     
     // Render the plot to the div tag with id "plot"
     Plotly.newPlot("bar", bar_traces, bar_layout);
-
     });
   }
 
@@ -167,7 +167,6 @@ function init() {
     // Build charts and metadata panel with the first sample
       buildCharts(first_sample);
       buildMetadata(first_sample);
-
   });
 }
 
