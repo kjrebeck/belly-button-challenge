@@ -80,8 +80,7 @@ function buildCharts(sample) {
         title: 'Number of Bacteria',
         color: "white"
         },
-      showlegend: false,
-      height: 500
+      showlegend: false
     }
 
     // Render the plot to the div tag with id "plot"
@@ -127,8 +126,7 @@ function buildCharts(sample) {
         }},
       xaxis: {
         title: 'Number of Bacteria'
-        },
-      height: 400
+        }
     }
     
     // Render the plot to the div tag with id "plot"
