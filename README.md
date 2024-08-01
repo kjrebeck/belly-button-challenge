@@ -1,10 +1,10 @@
 # Belly Button Challenge
 
-This project uses data from a Belly Button Biodiversity dataset to create an interactive web application that displays various visualizations of the data.
+This project uses data from a Belly Button Biodiversity dataset to create an interactive dashboard that displays various visualizations of the data.
 
 ## Project Overview
 
-This project uses javascript, plotly and d3 to build a dynamic web dashboard that allows users to explore data on bacterial species found in the human belly button. The dashboard uses a bar and bubble charts to visualize the distribution of bacterial species and their prevalence in different samples.
+This project uses javascript, plotly and d3 to build a dynamic web dashboard that allows users to explore data on bacteria cultures found in the human belly button. The dashboard uses a bar and bubble charts to visualize the distribution and prevalence of over 2300 microbal species among participants.
 
 
 ## References
